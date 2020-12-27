@@ -1,0 +1,45 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #000;
+  color: antiquewhite;
+}
+
+
+.navBarcontainer{
+  display:flex;
+  background-color:black;
+  width: 100%;
+  height: 100px;
+  
+}
+.navBarcontainer img{
+  width: 80px;
+  height: 80px;
+  border-radius: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  margin-right: 2%;
+}
+
+nav a{
+  color: whitesmoke;
+  text-decoration: none;
+ 
+}
+nav li{
+  padding: 30px;
+  list-style: none;
+}
+.navBar{
+font-weight: bold;
+font-size: 30px;
+display: flex;
+margin-left: auto;
+margin-right: auto;
+margin-top:auto;
+margin-bottom: auto;
+
+
+};
+
