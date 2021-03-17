@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs", {title:"Home"})%>
+
+<link rel="stylesheet" href="/stylesheets/register.css">
+<body>
+    <form class="formu" id="formulario">
+        
+          <label  class="">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="Barras" id="email" >
+          </div>
+       
+       
+          <label  class="">Password</label>
+          <div class="">
+            <input type="password" class="form-control" id="password">
+          </div>
+          <label class="">Repite la contrasena</label>
+          <div class="">
+            <input type="password" class="form-control" id="repassword">
+          </div>
+          <textarea name="" id="text" ></textarea>
+       
+        
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+</body>
+<script>
+window.addEventListener("load", function(){
+
+  let formulario = document.getElementById("formulario");
+  let email = document.getElementById("email");
+  let password = document.getElementById("password");
+  let repassword = document.getElementById("repassword");
+  let texto = document.getElementById("text");
+
+  formulario.addEventListener("submit",function(e){
+e.preventDefault();
+console.log(e);
+
+password.addEventListener("keyup",function(){
+  if(password.value.length < 6 || password.value.length == 0){
+  password.style.borderColor ="red";
+  console.log(password.value);
+}
+else{
+  password.style.borderColor ="blue";
+}
+
+
+
+})
+
+ 
+
+
+
+
+  })
+
+
+
+
+
+
+
+
+});
+
+</script>
+
+
+</html>

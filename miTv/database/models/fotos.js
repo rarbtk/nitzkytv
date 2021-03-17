@@ -1,4 +1,4 @@
-const { sequelize } = require(".");
+/*const { sequelize } = require(".");
 
 module.exports = (sequelize, dataTypes) =>{
     let alias = "imagenes";
@@ -20,4 +20,4 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps: false
     }
 }
-let imagenes = sequelize.define(alias,cols,config);
+let imagenes = sequelize.define(alias,cols,config);*/
