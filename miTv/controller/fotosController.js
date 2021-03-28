@@ -4,7 +4,7 @@ let path = require("path");
 
 const lectura_fotos = fs.readFileSync("data/fotos.json");
 let fotos_json = JSON.parse(lectura_fotos)
-console.log(fotos_json)
+
 
 const fotosController = {
 
