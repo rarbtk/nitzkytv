@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include("partials/header.ejs", {title:"Home"})%>
-
 <link rel="stylesheet" href="/stylesheets/register.css">
-<body>
-    <form class="formu" id="formulario">
-        
-          <label  class="">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="Barras" id="email" >
-          </div>
-       
-       
-          <label  class="">Password</label>
-          <div class="">
-            <input type="password" class="form-control" id="password">
-          </div>
-          <label class="">Repite la contrasena</label>
-          <div class="">
-            <input type="password" class="form-control" id="repassword">
-          </div>
-          <textarea name="" id="text" ></textarea>
-       
-        
-        
-        <button type="submit" class="btn btn-primary">Register</button>
-      </form>
-</body>
+<div class="container">
+
+  <div class="inputs">
+    <label>Full name</label>
+    <input type="text" placeholder="Your name" class="input-field" name="nombre">
+    <label>Email Addres</label>
+    <input type="email" placeholder="Email" class="input-field" name="email">
+    
+    
+    
+    
+    <label>Gender</label>
+    <div class="radio-btn">
+    <label>
+      <input type="radio" name="gender" value="male">
+      <span class="mark"></span>
+      <span class="btn-border"></span>
+      Male</label>
+      <label >
+        <input type="radio" name="gender" value="male">
+        <span class="mark"></span>
+        <span class="btn-border"></span>
+       Female</label>
+      </div>
+
+      <label >Date of Birth</label>
+      <input type="date" placeholder="" class="input-field" name="fecha">
+      <div class="text">
+        <input type="checkbox">
+        <p>I accept the <a href="#">terms & conditions</a></p>
+      </div>
+      <div class="btn">
+        <button>Create Account</button>
+      </div>
+</div>
+</div>
+
+
+
 <script>
 window.addEventListener("load", function(){
 
-  let formulario = document.getElementById("formulario");
+  let container = document.getElementsByClassName("container");
   let email = document.getElementById("email");
   let password = document.getElementById("password");
   let repassword = document.getElementById("repassword");
