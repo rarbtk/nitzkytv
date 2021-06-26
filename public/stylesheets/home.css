@@ -1,0 +1,22 @@
+.dp-flex{
+    display: flex;
+}
+
+.nuevasFotos{
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+
+.nuevasFotos img{
+    width: 300px;
+    height: 300px;
+}
+
+.contenido{
+    width: 60%;
+    margin-left: 5%;
+}
+.contenido p{
+    font-size: 20px;
+}

@@ -1,0 +1,18 @@
+[{
+"id":1,
+"name": "Right hook",
+"date":"9-julio-2014",
+"description":"Tercera pelea para pasar a cinturon marron",
+"image": "../images/punch.jpg"
+},
+{
+    "id":2,
+    "name": "Calistenia",
+    "date":"15-diciembre-2020",
+    "description":"Ejercicio de bandera llevo meses de practica",
+    "image": "../images/Bandera.jpg"
+
+}
+
+
+]

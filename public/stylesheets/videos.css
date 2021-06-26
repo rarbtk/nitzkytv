@@ -1,0 +1,19 @@
+.videosContainer{
+    margin-top: 2%;
+    flex-direction: column;
+    display: flex;
+}
+
+.videosContainer h2{
+    text-align: center;
+}
+
+.videosContainer iframe{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videosContainer p{
+    margin-left: auto;
+    margin-right: auto;
+}

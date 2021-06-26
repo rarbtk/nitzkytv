@@ -1,0 +1,32 @@
+.dp-flex{ 
+    display: flex;
+
+}
+
+#contenido-presentacion{
+    margin-top: 3%;
+    
+}
+
+#texto-presentacion h2{
+    text-align: center;
+    flex-direction: column;
+    font-weight: bold;
+    
+}
+#texto-presentacion p{
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+#contenido-presentacion img{
+    height: 30%;
+    margin-left: 5%;
+    width: 30%;
+    margin-right: 5%;
+}
+
+p{
+    font-family: 'Nunito Sans', sans-serif;
+}

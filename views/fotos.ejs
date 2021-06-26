@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/header.ejs",{title:"fotos"})%>
+<link rel="stylesheet" href="/stylesheets/fotos.css">
+<body>
+    
+   
+    
+    
+    <div class="TodasLasFotos dp-flex">
+        <% fotos_json.forEach(foto => { %>
+        
+    
+   <div class="centrar">
+    <h2><%= foto.name %></h2>
+    <img class="" src="<%= foto.image %>">
+    <p><%= foto.description %></p>
+    </div>
+   <% }) %>
+    </div>
+</body>
+</html>
