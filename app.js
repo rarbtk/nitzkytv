@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var fotosRouter = require('./routes/fotos');
 
 var app = express();
+require("./database");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

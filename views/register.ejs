@@ -4,29 +4,25 @@
 <link rel="stylesheet" href="/stylesheets/register.css">
 
 <div class="container">
-  <div class="inputs">
+  <form action="/" method="POST" id="contenedor">
+  <div class="inputs ">
     <label>Full name</label>
-    <input type="text" placeholder="Your name" class="input-field" name="nombre">
-    <label>Email Addres</label>
-    <input type="email" placeholder="Email" class="input-field" name="email">
-    
-    
-    
-    
-    <label>Gender</label>
-    <div class="radio-btn">
-    <label>
-      <input type="radio" name="gender" value="male">
-      <span class="mark"></span>
-      <span class="btn-border"></span>
-      Male</label>
-      <label >
-        <input type="radio" name="gender" value="male">
-        <span class="mark"></span>
-        <span class="btn-border"></span>
-       Female</label>
-      </div>
+    <input type="text" placeholder="Your name" class="input-field" name="nombre" id="grupo__nombre">
 
+    <label>Password</label>
+    <input type="password" placeholder="clave" class="input-field" name="password" id="grupo__password">
+    <p id="aviso" class="clave-correcta"> Debe de tener de 4 a 12 digitos</p>
+    
+    <label>Repeat Password</label>
+    <input type="password" placeholder="repeat password" class="input-field" name="password2">
+
+    <label>Email</label>
+    <input type="email" placeholder="email" class="input-field" name="email" id="grupo__email">
+    <p id="aviso-email" class="email-correcto"> Ingresa un formato valido de email</p>
+  
+
+    
+    
       <label >Date of Birth</label>
       <input type="date" placeholder="" class="input-field" name="fecha">
       <div class="text">
@@ -34,54 +30,89 @@
         <p>I accept the <a href="#">terms & conditions</a></p>
       </div>
       <div class="btn">
-        <button>Create Account</button>
+        <button type="submit">Create Account</button>
       </div>
 </div>
+</form>
 </div>
+
 
 
 
 <script>
-window.addEventListener("load", function(){
+const expresiones = {
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+  email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
-  let container = document.getElementsByClassName("container");
-  let email = document.getElementById("email");
-  let password = document.getElementById("password");
-  let repassword = document.getElementById("repassword");
-  let texto = document.getElementById("text");
-
-  formulario.addEventListener("submit",function(e){
-e.preventDefault();
-console.log(e);
-
-password.addEventListener("keyup",function(){
-  if(password.value.length < 6 || password.value.length == 0){
-  password.style.borderColor ="red";
-  console.log(password.value);
-}
-else{
-  password.style.borderColor ="blue";
 }
 
 
+  const contenedor = document.getElementById("contenedor");
+  const inputs = document.querySelectorAll('#contenedor input');
 
-})
+  const campos ={
+    nombre: false,
+    password: false,
+    email:false,
+    fecha: false
+  } 
 
- 
+  const validarFormulario = (e)=>{
+    switch (e.target.name){
+      case "nombre":
+        if(expresiones.nombre.test(e.target.value)){ 
+          document.getElementById("grupo__nombre").classList.remove("grupo-incorrecto")
+          document.getElementById("grupo__nombre").classList.add("grupo-correcto")
+        }else{
+          document.getElementById("grupo__nombre").classList.add("grupo-incorrecto")
+          document.getElementById("grupo__nombre").classList.remove("grupo-correcto")
 
+        }
+      break;
 
+      case "password":
+      if(expresiones.password.test(e.target.value)){ 
+          document.getElementById("grupo__password").classList.remove("grupo-incorrecto")
+          document.getElementById("grupo__password").classList.add("grupo-correcto")
+          document.getElementById("aviso").classList.add("clave-correcta")
+          document.getElementById("aviso").classList.remove("clave-incorrecta")
+        }else{
+          document.getElementById("grupo__password").classList.add("grupo-incorrecto")
+          document.getElementById("grupo__password").classList.remove("grupo-correcto")
+          document.getElementById("aviso").classList.remove("clave-correcta")
+          document.getElementById("aviso").classList.add("clave-incorrecta")
 
+        }
+      break;
+
+      case "email":
+      if(expresiones.email.test(e.target.value)){ 
+          document.getElementById("grupo__email").classList.remove("grupo-incorrecto")
+          document.getElementById("grupo__email").classList.add("grupo-correcto")
+          document.getElementById("aviso-email").classList.add("email-correcto")
+          document.getElementById("aviso-email").classList.remove("email-incorrecto")
+        }else{
+          document.getElementById("grupo__email").classList.add("grupo-incorrecto")
+          document.getElementById("grupo__email").classList.remove("grupo-correcto")
+          document.getElementById("aviso-email").classList.remove("email-correcto")
+          document.getElementById("aviso-email").classList.add("email-incorrecto")
+
+        }
+      break;
+    }
+
+  };
+
+  inputs.forEach((input)=>{
+    input.addEventListener("keyup", validarFormulario);
+    input.addEventListener("blur", validarFormulario);
 
   })
-
-
-
-
-
-
-
-
-});
+  contenedor.addEventListener("submit", (e)=>{
+    e.preventDefault();
+  });
+  
 
 </script>
 

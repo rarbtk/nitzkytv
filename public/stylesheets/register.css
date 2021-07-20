@@ -7,11 +7,11 @@
 .container{
     
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 280px;
-    height: 480px;
+    height: 500px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1),0 4px 8px rgba(0, 0, 0, .1);
     border-radius: 20px;
     overflow: hidden;
@@ -32,10 +32,10 @@
 }
 
 .input-field{
-    border: none;
+    border: solid 1px thistle;
     width: 250px;
     height: 45px;
-    border: 1px solid #dbdbdb;
+   
     border-radius:4px;
     padding-left: .7rem;
     outline: none;
@@ -124,4 +124,32 @@ input[type="radio"]:checked ~ .mark::before{
     outline: none;
     background: #1294fc;
     color: #fff;
+}
+
+/*aqui empiezan las validaciones */ 
+
+
+
+.grupo-incorrecto{
+    border: solid 1px  red;
+}
+
+.grupo-correcto{
+    border:solid 1px green;
+}
+
+.clave-correcta{
+    display: none;
+}
+.clave-incorrecta{
+    display: flex;
+    color: red;
+}
+
+.email-correcto{
+    display: none;
+}
+.email-incorrecto{
+    display: flex;
+    color: red;
 }
